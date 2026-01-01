@@ -1,0 +1,1048 @@
+/* Pomockis treba mat ze?!*/
+/**/
+
+@import "https://fonts.googleapis.com/css2?family=Kanit&display=swap";
+:root {
+  --menu-color: 94, 94, 91;
+}
+.Desc {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  bottom: 1vw;
+  transform: translate(-50%);
+  width: auto;
+  min-width: 150px;
+  height: 1.5021vw;
+  background-color: rgba(0, 0, 0, 0.678);
+  /*border: 0.0121vw solid rgb(var(--menu-color));*/
+  border-radius: 0.2604vw;
+  padding: 14px;
+  padding-top: 30px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 180;
+  font-size: 0.581vw;
+  color: #ffffff96;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  flex-direction: column;
+}
+
+.Desc span {
+  margin-top: 0.0521vw;
+}
+
+.Desc::before {
+  content: "Press F5 to keybind";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.651vw;
+  color: #ffffffc4;
+}
+.SWrapper {
+  position: absolute;
+  display: flex;
+  left: 7vw;
+  top: 45%;
+  transform: translateY(-50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+}
+
+.SWrapper .SElements {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.2604vw;
+}
+.SWrapper .SElements .SScroll {
+  position: absolute;
+  display: flex;
+  top: 38.5px;
+  left: -0.55vw;
+  width: 0.5508vw;
+  height: calc(100% - 65px);
+  background-color: #000000b0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.08vw;
+  border-radius: 0.2042vw 0 0 0.2042vw;
+}
+.SWrapper .SElements .SScroll i {
+  font-size: 0.5208vw;
+  color: #fff;
+}
+.SWrapper .SElements .SScroll .SSProgressWrapper {
+  position: relative;
+  display: flex;
+  width: 0.2083vw;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+.SWrapper .SElements .SScroll .SSProgress {
+  position: relative;
+  display: flex;
+  left: -0.05vw;
+  width: 0.1083vw;
+  margin-top: 0.1302vw;
+  background-color: rgb(var(--menu-color));
+  box-shadow: 0 0 0.1042vw 0.0521vw rgba(var(--menu-color), 1);
+  transition: top 0.25s ease, height 0.25s ease;
+  border-radius: 0.2042vw;
+}
+
+/* Picovina jebnuta 
+.SWrapper .SElements .SRightElements {
+  position: relative;
+  display: flex;
+  width: 19.0104vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}*/
+
+.SWrapper .SBanner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 5.4688vw;
+  justify-content: center;
+  align-items: center;
+  border: 0.0521vw solid black;
+  border-radius: 0.2521vw;
+  overflow: hidden;
+}
+.SWrapper .SBanner img {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 200%;
+}
+
+.SWrapper .SCategories {
+  position: relative;
+  display: flex;
+  width: auto;
+  max-width: 19.0104vw;
+  height: 1.3625vw;
+  margin-top: 0.001vw;
+  margin-bottom: 0.67vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #000000e7;
+  border: 0.0521vw solid rgba(0, 0, 0, 0.6);
+  border-radius: 0.2521vw 0.2521vw 0.2521vw 0.2521vw;
+  box-shadow: 0 0 0.2083vw rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transform: translateY(0.36vw);
+  /* border-bottom: 0.1vw solid #000000e7;*/
+}
+.SWrapper .SCategories .SCategory {
+  position: relative;
+  display: flex;
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.65vw;
+  font-weight: 300;
+  color: #fff;
+  border-bottom-left-radius: 0vw;
+  border-bottom-right-radius: 0vw;
+  z-index: 3;
+  overflow: hidden;
+}
+.SWrapper .SCategories .SCategory.active {
+  background: transparent;
+}
+.SWrapper .SCategories .SCategory::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(110%);
+  background: linear-gradient(
+    180deg,
+    rgba(var(--menu-color), 0.03),
+    rgba(var(--menu-color), 0.4)
+  );
+  box-shadow: 0 0 0.2604vw rgba(var(--menu-color), 0.25);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 1;
+}
+
+.SWrapper .SCategories .SCategory > * {
+  position: relative;
+  z-index: 4;
+}
+.SWrapper .SCategories .SCategory.active::after {
+  animation: pc-pull 270ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+@keyframes pc-pull {
+  0% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(18%);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.SWrapper .SCategories .SCategory:only-child {
+  position: relative;
+  display: flex;
+  left: 0;
+  font-size: 0.625vw;
+  padding: 0 0.8vw;
+  justify-content: center;
+  flex: none;
+  width: 100%;
+}
+.SWrapper .SCategories .SCategory:last-child {
+  border-right: none;
+}
+.SWrapper .STabs {
+  position: relative;
+  display: flex;
+  width: 19.0104vw;
+  height: auto;
+  max-height: 16.0625vw;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000000b0;
+  border-radius: 0 0.2521vw 0.2521vw 0;
+  overflow-y: hidden;
+}
+.SWrapper .STabs .STab {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1.5625vw;
+  min-height: 1.5625vw;
+  max-height: 1.5625vw;
+  justify-content: center;
+  align-items: center;
+}
+.SWrapper .STabs .STab .STLabel {
+  position: absolute;
+  display: block;
+  left: 0.6vw;
+  width: 60%;
+  height: 60%;
+  font-size: 0.625vw;
+  font-weight: 300;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.SWrapper .STabs .STab .STDLabel {
+  position: absolute;
+  display: flex;
+  left: 0.5vw;
+  font-size: 0.625vw;
+  color: #fff;
+}
+.SWrapper .STabs .STab i {
+  position: absolute;
+  display: flex;
+  right: 0.65vw;
+  font-size: 0.625vw;
+  color: #fff;
+}
+.SWrapper .STabs .STab .TOptions {
+  position: absolute;
+  display: flex;
+  right: 0.65vw;
+  width: 7.8125vw;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5208vw;
+}
+.SWrapper .STabs .STab .TOptions .Scrollable {
+  position: relative;
+  display: flex;
+  right: 0.15vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.2604vw;
+  font-size: 0.625vw;
+  font-weight: 250;
+  color: #fff;
+}
+.SWrapper .STabs .STab .TOptions .Checkbox {
+  position: relative;
+  display: flex;
+  right: 0vw;
+  width: 1.5625vw;
+  height: 0.7813vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a3a3a;
+  border-radius: 5vw;
+}
+.SWrapper .STabs .STab .TOptions .Checkbox.Checked {
+  background-color: #3a3a3a;
+}
+.SWrapper .STabs .STab .TOptions .Checkbox.Checked .Inside {
+  left: 0.75vw;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: remixicon;
+  font-size: 0.7vw;
+  color: rgb(var(--menu-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-46.2%);
+}
+
+.SWrapper .STabs .STab .TOptions .Checkbox.Checked .Inside::before {
+  content: "\EB80";
+}
+
+.SWrapper .STabs .STab .TOptions .Checkbox .Inside {
+  position: absolute;
+  display: flex;
+  left: 0.1vw;
+  margin-bottom: 0;
+  width: auto;
+  height: 1vw;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: remixicon;
+  font-size: 0.7vw;
+  color: #fff;
+  transition: 0.5s all;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-46.2%);
+  line-height: 1;
+}
+
+.SWrapper .STabs .STab .TOptions .Checkbox .Inside::before {
+  content: "\EB97";
+  line-height: 1;
+}
+.SWrapper .STabs .STab .TOptions .Slider {
+  position: relative;
+  display: flex;
+  right: 0.15vw;
+  width: 2.6vw;
+  height: 0.2083vw;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 0.2604vw;
+}
+.SWrapper .STabs .STab .TOptions .Slider .Progress {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border-radius: 0.2604vw;
+}
+.SWrapper .STabs .STab .TOptions .Slider .Progress .Thumb {
+  position: absolute;
+  display: flex;
+  right: -0.25vw;
+  width: 0.4167vw;
+  height: 0.4167vw;
+  background-color: #fff;
+  border-radius: 0.5208vw;
+}
+.SWrapper .STabs .STab .Checkbox {
+  position: absolute;
+  display: flex;
+  right: 0.65vw;
+  width: 1.5625vw;
+  height: 0.7813vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a3a3a;
+  border-radius: 5vw;
+}
+.SWrapper .STabs .STab .Checkbox.Checked {
+  background-color: #3a3a3a;
+}
+.SWrapper .STabs .STab .Checkbox.Checked .Inside {
+  left: 0.75vw;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: remixicon;
+  font-size: 0.7vw;
+  color: rgb(var(--menu-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-46.2%);
+}
+
+.SWrapper .STabs .STab .Checkbox.Checked .Inside::before {
+  content: "\EB80";
+  line-height: 1;
+}
+
+.SWrapper .STabs .STab .Checkbox .Inside {
+  position: absolute;
+  display: flex;
+  left: 0.1vw;
+  margin-bottom: 0;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: remixicon;
+  font-size: 0.7vw;
+  color: #fff;
+  transition: 0.5s all;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-46.2%);
+  line-height: 1;
+}
+
+.SWrapper .STabs .STab .Checkbox .Inside::before {
+  content: "\EB97";
+  line-height: 1;
+}
+.SWrapper .STabs .STab .Slider {
+  position: absolute;
+  display: flex;
+  right: 0.7vw;
+  width: 2.6vw;
+  height: 0.2083vw;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 0.2604vw;
+}
+.SWrapper .STabs .STab .Slider .Progress {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(225, 225, 225);
+  border-radius: 0.2604vw;
+}
+.SWrapper .STabs .STab .Slider .Progress .Thumb {
+  position: absolute;
+  display: flex;
+  right: -0.25vw;
+  width: 0.4167vw;
+  height: 0.4167vw;
+  background-color: #e1e1e1;
+  border-radius: 0.5208vw;
+}
+.SWrapper .STabs .STab .Scrollable {
+  position: absolute;
+  display: flex;
+  right: 0.65vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.2604vw;
+  font-size: 0.625vw;
+  font-weight: 250;
+  color: #fff;
+}
+.SWrapper .STabs .STab .Divider {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.1vw;
+}
+.SWrapper .STabs .STab .Divider .Left,
+.SWrapper .STabs .STab .Divider .Right {
+  position: relative;
+  display: flex;
+  width: calc(22% - 30px);
+  height: 0.1483vw;
+  background-color: #fff;
+  border-radius: 4vw;
+  min-width: 0;
+  margin: 0 0.1px;
+}
+
+.SWrapper .STabs .STab .Divider .Label {
+  position: relative;
+  display: flex;
+  font-size: 0.625vw;
+  font-weight: 300;
+  color: #e1e1e18a;
+  white-space: nowrap;
+  padding: 0 0vw;
+}
+.SWrapper .Metadata {
+  position: absolute;
+  display: flex;
+  width: 12.021vw;
+  left: calc(100% + 1vw);
+  top: calc(1.5688vw + 0.425vw + 0.06vw);
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.2083vw;
+  background-color: #000000a6;
+  border-radius: 0.2604vw;
+  padding: 0.5208vw;
+}
+.SWrapper .Metadata .Title {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 0.7813vw;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.877);
+}
+.SWrapper .Metadata .Title span {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-weight: 350;
+  font-size: 0.625vw;
+  line-height: 0.7813vw;
+  text-align: center;
+}
+.SWrapper .Metadata .Line {
+  position: relative;
+  display: flex;
+  width: 109%;
+  height: 0.043vw;
+  margin-top: 0.2083vw;
+  background-color: #57575780;
+  left: -10px;
+}
+.SWrapper .Metadata .Values {
+  position: relative;
+  display: flex;
+  width: 98%;
+  margin-top: 0.3125vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2604vw;
+}
+.SWrapper .Metadata .Values .Value {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.SWrapper .Metadata .Values .Value .Key {
+  position: relative;
+  display: flex;
+  height: 0.7813vw;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-weight: 250;
+  font-size: 0.625vw;
+  line-height: 0.7813vw;
+  align-items: center;
+  color: #fff;
+}
+.SWrapper .Metadata .Values .Value .Val {
+  position: absolute;
+  display: flex;
+  right: 0vw;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5604vw;
+}
+.SWrapper .Metadata .Values .Value .Val span {
+  height: 0.7813vw;
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-weight: 250;
+  font-size: 0.625vw;
+  line-height: 0.7813vw;
+  align-items: center;
+  color: #fff;
+}
+.SWrapper .Metadata .Values .Value .Val .Status {
+  position: relative;
+  display: flex;
+  width: 0.1904vw;
+  height: 0.6813vw;
+  background-color: #000;
+  border-radius: 0.1781vw;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+
+  transform-origin: center;
+}
+.SWrapper .Metadata .Values .Value .Val .Status .Progress {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 0vw;
+  transition: 0.25s height;
+}
+.SWrapper .SFooter {
+  position: relative;
+  display: flex;
+  width: 19.0104vw;
+  height: 1.3625vw;
+  margin-top: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  overflow: hidden;
+  bottom: -7px;
+}
+
+.SWrapper .SFooter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(39% - 0.25vw);
+  height: 90%;
+  background-color: #000000cb;
+  border-radius: 0.2521vw 0.2521vw 0.2521vw 0.2521vw;
+  z-index: 1;
+}
+
+.SWrapper .SFooter::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(31% - 0.1vw);
+  height: 90%;
+  background-color: #000000cb;
+  border-radius: 0.2521vw 0.2521vw 0.2521vw 0.2521vw;
+  z-index: 1;
+}
+
+.SWrapper .SFooter .SBeta {
+  position: absolute;
+  left: 50%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  margin-left: 6vw;
+  font-size: 0.57vw;
+  font-weight: 300;
+  color: #fff;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.SWrapper .SFooter img {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  margin-left: 8.7vw;
+  filter: drop-shadow(0 0 0.1px rgba(255, 255, 255, 0.911));
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.SWrapper .SFooter .SBuild {
+  position: absolute;
+  left: 0.5vw;
+  top: 13%;
+  font-size: 0.57vw;
+  font-weight: 250;
+  color: #fff;
+  z-index: 2;
+}
+
+.SWrapper .SFooter .SIndicator {
+  position: absolute;
+  right: 0.5vw;
+  font-size: 0.625vw;
+  font-weight: 250;
+  color: #fff;
+  z-index: 2;
+}
+
+.NotificationsWrapper {
+  position: fixed;
+  top: 0.6vw;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9vw;
+  z-index: 9999;
+  pointer-events: none;
+  align-items: center;
+}
+.NotificationsWrapper > .Notification:nth-child(n + 6) {
+  display: none;
+}
+.Notification {
+  background-color: #000000be;
+  padding: 0.425vw 0.5vw;
+  width: auto;
+  min-width: 10vw;
+  max-width: 14vw;
+  display: flex;
+  flex-direction: row;
+  gap: 0.1vw;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-1vw) translateX(0);
+  transition: opacity 0.45s ease, transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
+  border-radius: 3px;
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.45);
+}
+.Notification.enter {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+.Notification.exit {
+  opacity: 0;
+  transform: translateY(-1.2vw) translateX(0);
+}
+.Notification i {
+  display: none;
+}
+.Notification .NotificationBorder {
+  display: none;
+}
+.Notification .NotificationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+}
+.Notification .NotificationTitle {
+  font-size: 0.78vw;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+.Notification .NotificationDesc {
+  font-size: 0.56vw;
+  word-wrap: break-word;
+  color: rgba(255, 255, 255, 0.7);
+}
+.Notification .NotificationProgress {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 0.1vw;
+  transform: translateX(-50%) scaleX(1);
+  transform-origin: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #adadad;
+  animation: progressCenter var(--notif-duration, 4s) linear forwards;
+  border-bottom-left-radius: 0.5vw;
+  border-bottom-right-radius: 0.5vw;
+  overflow: hidden;
+}
+@keyframes progressCenter {
+  0% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(-50%) scaleX(0.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.Overlay {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #0009;
+}
+.InputWrapper {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  bottom: 12vw;
+  width: 28.0417vw;
+  height: auto;
+  transform: translate(-50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0a0a0a;
+  font-family: "Kanit", sans-serif;
+  border-radius: 0.2604vw;
+  overflow: hidden;
+}
+.InputWrapper .Header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1.3021vw;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 5vw;
+  border-bottom: 0.0521vw solid rgb(var(--menu-color));
+  font-size: 0.625vw;
+  font-weight: 230;
+  color: #fff;
+}
+.InputWrapper .Header img {
+  width: 0.9vw;
+  height: 0.9vw;
+  margin-left: 0.3vw;
+  margin-right: -0.25vw;
+}
+.InputWrapper .Header .Line {
+  width: 0.0521vw;
+  height: 0.7813vw;
+  background-color: #ffffff00;
+}
+.InputWrapper .Header i {
+  margin-left: 0.5vw;
+}
+.InputWrapper .Body {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1.8229vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.2604vw;
+  background-color: #00000044;
+  font-size: 0.625vw;
+  font-weight: 230;
+  color: #ffffffc0;
+}
+.InputWrapper .Body .InsideCon {
+  position: absolute;
+  display: flex;
+  width: 99.1%;
+  height: 71.15%;
+  margin-bottom: 0.0021vw;
+  background-color: #2b2b2b71;
+  border-radius: 0.1203vw 0.1203vw 0.1203vw 0.1203vw;
+  justify-content: flex-start;
+  align-items: center;
+}
+.InputWrapper .Body span {
+  position: absolute;
+  display: flex;
+  left: 0.45vw;
+}
+.InputWrapper .Body .InsideCon span:after {
+  content: "";
+  display: inline-block;
+  width: 0.0521vw;
+  height: 0.6vw;
+  background-color: #fff;
+  margin-left: 0.1vw;
+  margin-bottom: 0.0521vw;
+  animation: blink 1s steps(2, start) infinite;
+  align-self: center;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+.KBLWrapper {
+  position: absolute;
+  display: flex;
+  right: 1.9417vw;
+  top: 1.9417vw;
+  width: 7.0313vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+  border-radius: 0.1563vw;
+  overflow: hidden;
+}
+.KBLWrapper .Header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1.0417vw;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #000c;
+  border-bottom: 0.0521vw solid rgb(var(--menu-color));
+}
+.KBLWrapper .Header .Icon {
+  margin-left: 0.25vw;
+  color: rgb(var(--menu-color));
+}
+.KBLWrapper .Header span {
+  margin-left: 1.4042vw;
+  font-size: 0.5208vw;
+  font-weight: 350;
+  color: #fff;
+}
+.KBLWrapper .Keybinds {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.2083vw;
+  background-color: #00000080;
+  padding: 0.1042vw;
+}
+.KBLWrapper .Keybinds .Keybind {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 0.7813vw;
+  justify-content: flex-start;
+  align-items: center;
+}
+.KBLWrapper .Keybinds .Keybind .Label {
+  position: absolute;
+  display: flex;
+  left: 0.25vw;
+  font-size: 0.5208vw;
+  font-weight: 350;
+  color: #fff;
+}
+.KBLWrapper .Keybinds .Keybind .Elements {
+  position: absolute;
+  display: flex;
+  right: 0.25vw;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.1042vw;
+}
+.KBLWrapper .Keybinds .Keybind .Elements span {
+  font-size: 0.5208vw;
+  font-weight: 350;
+  color: #fff;
+}
+.Crosshair {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  width: 2.7vw;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.FCWrapper {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  bottom: 4vw;
+  max-height: 13.0208vw;
+  transform: translate(-50%);
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Kanit", sans-serif;
+  gap: 0.2083vw;
+  overflow: hidden;
+}
+.FCWrapper .Option {
+  position: relative;
+  display: flex;
+  font-size: 0.625vw;
+  font-weight: 300;
+  color: #ffffff4d;
+}
+.FCWrapper .Option.Selected {
+  color: #fff;
+  font-weight: 300;
+  text-shadow: -0.0781vw -0.0781vw 0 #000000, 0.0781vw -0.0781vw 0 #000000,
+    -0.0781vw 0.0781vw 0 #000000, 0.0781vw 0.0781vw 0 #000000;
+}
+html {
+  color-scheme: normal !important;
+}
+body {
+  background: none !important;
+  margin: 0;
+  font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  user-select: none;
+  overflow: hidden !important;
+}
+p {
+  margin: 0;
+}
+#root {
+  height: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}

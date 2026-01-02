@@ -71,7 +71,7 @@
   top: 38.5px;
   left: -0.55vw;
   width: 0.5508vw;
-  height: calc(100% - 65px);
+  height: calc(100% - 64.5px);
   background-color: #000000b0;
   justify-content: center;
   align-items: center;
@@ -227,7 +227,7 @@
   display: flex;
   width: 19.0104vw;
   height: auto;
-  max-height: 16.0625vw;
+  max-height: 15.6625vw;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
@@ -302,7 +302,7 @@
   display: flex;
   right: 0vw;
   width: 1.5625vw;
-  height: 0.7813vw;
+  height: 0.8813vw;
   justify-content: center;
   align-items: center;
   background-color: #3a3a3a;
@@ -312,7 +312,7 @@
   background-color: #3a3a3a;
 }
 .SWrapper .STabs .STab .TOptions .Checkbox.Checked .Inside {
-  left: 0.75vw;
+  left: 0.8vw;
   width: auto;
   height: auto;
   background-color: transparent;
@@ -325,7 +325,7 @@
   align-items: center;
   position: absolute;
   top: 50%;
-  transform: translateY(-46.2%);
+  transform: translateY(-50%);
 }
 
 .SWrapper .STabs .STab .TOptions .Checkbox.Checked .Inside::before {
@@ -348,7 +348,7 @@
   justify-content: center;
   align-items: center;
   top: 50%;
-  transform: translateY(-46.2%);
+  transform: translateY(-50%);
   line-height: 1;
 }
 
@@ -390,7 +390,7 @@
   display: flex;
   right: 0.65vw;
   width: 1.5625vw;
-  height: 0.7813vw;
+  height: 0.8813vw;
   justify-content: center;
   align-items: center;
   background-color: #3a3a3a;
@@ -400,7 +400,7 @@
   background-color: #3a3a3a;
 }
 .SWrapper .STabs .STab .Checkbox.Checked .Inside {
-  left: 0.75vw;
+  left: 0.8vw;
   width: auto;
   height: auto;
   background-color: transparent;
@@ -413,7 +413,7 @@
   align-items: center;
   position: absolute;
   top: 50%;
-  transform: translateY(-46.2%);
+  transform: translateY(-50%);
 }
 
 .SWrapper .STabs .STab .Checkbox.Checked .Inside::before {
@@ -437,7 +437,7 @@
   justify-content: center;
   align-items: center;
   top: 50%;
-  transform: translateY(-46.2%);
+  transform: translateY(-50%);
   line-height: 1;
 }
 
